@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo CSS</title>
+    <link rel="stylesheet" href="assets/index.css">
+</head>
+
+<body>
+    <main>
+        <h1>CSS Nuances</h1>
+        <ul class="p-0">
+            <li class="inline-block mr-20px">
+                <h2 class="m-0">Pseudo-Element</h2>
+            </li>
+            <li class="inline-block mr-20px">
+                <h2 class="m-0">Pseudo-State</h2>
+            </li>
+            <li class="inline-block mr-20px">
+                <h2 class="m-0">Attribute</h2>
+            </li>
+            <li class="inline-block mr-20px">
+                <h2 class="m-0">Has</h2>
+            </li>
+            <li class="inline-block mr-20px">
+                <h2 class="m-0">Hover Tooltip</h2>
+            </li>
+        </ul>
+        <span class="interactive" attribute-a="1" attribute-b="2">Hover for alternate attribute value: </span>
+        <p></p>
+
+        <span attribute-selected>Attribute selected</span>
+        <p></p>
+
+        <div class="rel">
+            Parent. Hover for tooltip whose content is from attribute.
+            <div class="abs">Tooltip!</div>
+        </div>
+        <p></p>
+
+        <div class="parent">
+            Parent is highlighted because it<br/>
+            <div class="has-child float-right">has child</div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+/**
+ * By Weng:
+ * Here where we break down pseudo-state, pseudo-element, content that changes by attribute and hover state, selecting by attribute, creating a tooltip that appears on the Z-axis when hovered, and selecting a parent based on its children.
+**/
+
+
+/* Helper classes */
+
+.float-right {
+    float: right;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.mr-20px {
+    margin-right: 20px;
+}
+
+
+/* Pseudo-state: Hover */
+
+.interactive {
+    display: inline-block;
+    padding: 10px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: lightgray;
+    color: black;
+    /* For a smooth change in color on hovering on and off */
+    transition: color 3s ease;
+    /* For mouse cursor that appears a pointing hand */
+    cursor: pointer;
+}
+
+.interactive:hover {
+    color: red;
+}
+
+
+/* Pseudo-element */
+
+.interactive::before {
+    content: "Hey! ";
+}
+
+
+/* Content that changes by attribute and hover state */
+
+.interactive::after {
+    content: attr(attribute-a);
+}
+
+.interactive:hover::after {
+    content: attr(attribute-b);
+}
+
+
+/* Select by attribute */
+
+[attribute-selected] {
+    background-color: red;
+}
+
+
+/* Relative-Absolute to place a tooltip on the Z-axis that appears on top when hovered */
+
+.rel {
+    display: block;
+    width: 200px;
+    position: relative;
+    border: 1px solid gray;
+}
+
+.abs {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: darkgray;
+    border: 1px solid gray;
+    width: 100px;
+    height: 50px;
+}
+
+.abs {
+    /* display: none; */
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 1s ease, opacity 1s ease;
+    transform: translateY(100%);
+}
+
+.rel:hover>.abs {
+    height: 50px;
+    opacity: 100%;
+    /* display: block; */
+}
+
+
+/* A parent selector based on what child/children it has */
+
+.parent:has(.has-child) {
+    display: inline-block;
+    background-color: cyan;
+}
